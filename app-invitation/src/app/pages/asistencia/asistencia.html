@@ -1,1 +1,40 @@
-<p>asistencia works!</p>
+
+<div class="container mt-5">
+	<div class="row justify-content-center">
+		<div class="col-md-6">
+			<div class="card shadow">
+				<div class="card-body">
+					<h3 class="card-title mb-4 text-center">Confirmar Asistencia</h3>
+					<form>
+						<div class="mb-3">
+							<label for="nombre" class="form-label">Nombre</label>
+							<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
+						</div>
+						<div class="mb-3">
+							<label for="invitados" class="form-label">Número de invitados</label>
+							<input type="number" class="form-control" id="invitados" name="invitados" min="0" placeholder="0" required>
+						</div>
+						<div class="mb-3">
+							<label class="form-label">¿Confirmas tu asistencia?</label>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="confirmacion" id="confirmarSi" value="si" required>
+								<label class="form-check-label" for="confirmarSi">Sí</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="confirmacion" id="confirmarNo" value="no" required>
+								<label class="form-check-label" for="confirmarNo">No</label>
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="mensaje" class="form-label">Mensaje (opcional)</label>
+							<textarea class="form-control" id="mensaje" name="mensaje" rows="2" placeholder="Escribe un mensaje..."></textarea>
+						</div>
+						<div class="d-grid">
+							<button type="submit" class="btn btn-primary">Enviar confirmación</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
