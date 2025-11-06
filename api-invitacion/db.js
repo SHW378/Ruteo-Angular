@@ -14,4 +14,6 @@ connection.connect((err) => {
     else {  
         console.log('Conectado exitosamente a mysql');
     }
-})
+});
+
+module.exports = connection;
