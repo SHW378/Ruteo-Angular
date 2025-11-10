@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListadoComponentes } from './listado-componentes';
+import { ListadoConfirmacion } from './listado-confirmacion';
 
-describe('ListadoComponentes', () => {
-  let component: ListadoComponentes;
-  let fixture: ComponentFixture<ListadoComponentes>;
+describe('ListadoConfirmacion', () => {
+  let component: ListadoConfirmacion;
+  let fixture: ComponentFixture<ListadoConfirmacion>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ListadoComponentes]
+      imports: [ListadoConfirmacion]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ListadoComponentes);
+    fixture = TestBed.createComponent(ListadoConfirmacion);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

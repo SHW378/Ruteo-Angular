@@ -30,6 +30,21 @@ app.post('/saveConfirmacion', (req, res) => {
         res.status(201).json({ mensaje: 'Registro exitoso', idGenerado: results.insertId});
     });
 });
+
+//Metodo para obtener todo el listado de confirmaciones
+app.get('/getConfirmaciones', (req, res) => {
+    const sql = `select * from confirmacion`;
+    connection.query(sql, (err, response) => {
+        if(err) {
+            return res.status(500).json({
+                mensaje: 'Error al consultar la base de datos',
+                error: err.message
+            });
+        }
+            res.status(200).json(response);
+    });
+})
+
 app.listen(PORT, () => {
     console.log(`Servidor ejecutado en http://localhost:${PORT}`)
 });
