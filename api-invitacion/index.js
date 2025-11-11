@@ -44,8 +44,20 @@ app.get('/getConfirmaciones', (req, res) => {
             res.status(200).json(response);
     });
 })
+app.get('/getConfirmacion/:filtro', (req, res) => {
+    const sql = `select * from confirmacion where id = ? or nombre like ?`
+    const { filtro } = req.params;
+    connection.query(sql, [filtro,'%' +filtro+'%'], (err, result) => {
+        if(err) {
+            return res.status(500).json({message:'Error al consultar la base de datos'})
+        }
+        if(result.length === 0) {
+            return res.status(200).json({message:'Sin coincidencias'})
+        }
+        res.status(200).json({result})
+    })
+})
 
 app.listen(PORT, () => {
     console.log(`Servidor ejecutado en http://localhost:${PORT}`)
 });
- 
