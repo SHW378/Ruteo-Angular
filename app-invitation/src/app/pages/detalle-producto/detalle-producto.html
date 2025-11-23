@@ -1,0 +1,41 @@
+<div class="container-detalle">
+  <!-- Si hay producto, mostramos info -->
+  <div class="card-detalle" *ngIf="producto; else vacio">
+    <div class="card-header">
+      <div class="icon-circle"><i class="fa-solid fa-box-open"></i></div>
+      <div class="titulos">
+        <h2>{{ producto.nombre }}</h2>
+        <span class="badge-sku">{{ producto.sku }}</span>
+      </div>
+    </div>
+
+    <div class="card-body grid-3">
+      <div class="dato-box">
+        <label>Precio</label>
+        <span class="valor">${{ producto.precio }}</span>
+      </div>
+      <div class="dato-box">
+        <label>Stock Actual</label>
+        <span class="valor">{{ producto.stock }}</span>
+      </div>
+      <div class="dato-box">
+        <label>Categoría</label>
+        <span class="valor">{{ producto.categoria_nombre || 'General' }}</span>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <button (click)="volver()" class="btn-volver">Volver al Listado</button>
+    </div>
+  </div>
+
+  <!-- Si NO hay producto (acceso directo) -->
+  <ng-template #vacio>
+    <div class="empty-state">
+      <i class="fa-solid fa-magnifying-glass big-icon"></i>
+      <h3>No has seleccionado ningún producto</h3>
+      <p>Selecciona uno desde el listado para ver sus detalles.</p>
+      <button (click)="volver()" class="btn-primario">Ir a Productos</button>
+    </div>
+  </ng-template>
+</div>

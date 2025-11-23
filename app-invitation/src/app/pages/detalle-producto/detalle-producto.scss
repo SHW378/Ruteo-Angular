@@ -1,0 +1,102 @@
+.detalle-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.header-detalle {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.icono-grande {
+  font-size: 3rem;
+  color: #0d47a1;
+  background-color: #e3f2fd;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.badge-sku {
+  background-color: #eee;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  color: #666;
+  font-family: monospace;
+}
+
+.grid-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.info-box label {
+  display: block;
+  color: #999;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.valor {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.btn-volver {
+  background-color: transparent;
+  color: #0d47a1;
+  padding: 10px 30px;
+  border: 1px solid #0d47a1;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-volver:hover { background: #e3f2fd; }
+
+/* --- Estilos Estado Vacío (Empty State) --- */
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  background: white;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.icon-empty {
+  font-size: 4rem;
+  color: #cfd8dc;
+  margin-bottom: 20px;
+}
+
+.empty-state h3 { color: #546e7a; margin-bottom: 10px; }
+.empty-state p { color: #78909c; margin-bottom: 30px; }
+
+.btn-primario {
+  background-color: #0d47a1;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-primario:hover { background-color: #1565c0; }

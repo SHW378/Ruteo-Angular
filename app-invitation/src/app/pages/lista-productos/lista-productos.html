@@ -1,0 +1,43 @@
+<div class="listado-container">
+  <div class="actions-bar">
+    <h2>Inventario General</h2>
+    <button class="btn-add" (click)="nuevoProducto()">
+      <i class="fa-solid fa-plus"></i> Nuevo Producto
+    </button>
+  </div>
+
+  <div class="tabla-wrapper">
+    <table class="modern-table">
+      <thead>
+        <tr>
+          <th>SKU</th>
+          <th>Nombre</th>
+          <th>Categoría</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of productos()">
+          <td><span class="sku-tag">{{ p.sku }}</span></td>
+          <td class="fw-bold">{{ p.nombre }}</td>
+          <td>{{ p.categoria_nombre }}</td>
+          <td>${{ p.precio }}</td>
+          <td>
+            <span class="stock-badge" [ngClass]="{'low': p.stock < 5, 'ok': p.stock >= 5}">
+              {{ p.stock }}
+            </span>
+          </td>
+          <td class="actions-cell">
+            <button (click)="verDetalle(p)" class="btn-icon" title="Ver"><i class="fa-solid fa-eye"></i></button>
+            <button (click)="editar(p)" class="btn-icon edit" title="Editar"><i class="fa-solid fa-pencil"></i></button>
+          </td>
+        </tr>
+        <tr *ngIf="productos().length === 0">
+          <td colspan="6" class="no-data">No hay productos registrados.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

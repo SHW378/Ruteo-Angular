@@ -1,0 +1,39 @@
+<div class="dashboard-fade-in">
+  <div class="header-section">
+    <h2><i class="fa-solid fa-chart-pie"></i> Panel de Control</h2>
+    <p class="subtitulo">Resumen en tiempo real de tu inventario</p>
+  </div>
+
+  <!-- Tarjetas Métricas -->
+  <div class="cards-container">
+    <div class="card-metric blue">
+      <div class="icon-bg"><i class="fa-solid fa-boxes-stacked"></i></div>
+      <h3>Total Productos</h3>
+      <div class="value">{{ totalProductos() }}</div>
+    </div>
+
+    <div class="card-metric green">
+      <div class="icon-bg"><i class="fa-solid fa-sack-dollar"></i></div>
+      <h3>Valor Inventario</h3>
+      <div class="value">{{ valorInventario() | currency }}</div>
+    </div>
+
+    <div class="card-metric orange">
+      <div class="icon-bg"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <h3>Stock Bajo</h3>
+      <div class="value">{{ alertasStock().length }}</div>
+    </div>
+  </div>
+
+  <!-- Lista de Alertas (Reutilizable visualmente) -->
+  <div class="alertas-panel" *ngIf="alertasStock().length > 0">
+    <h3><i class="fa-solid fa-bell"></i> Alertas de Reabastecimiento</h3>
+    <div class="alerta-list">
+      <div class="alerta-item" *ngFor="let item of alertasStock()">
+        <div class="prod-name">{{ item.nombre }}</div>
+        <div class="prod-sku">{{ item.sku }}</div>
+        <div class="prod-stock">Quedan: <strong>{{ item.stock }}</strong></div>
+      </div>
+    </div>
+  </div>
+</div>

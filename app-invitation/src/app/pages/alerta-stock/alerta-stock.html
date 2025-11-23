@@ -1,0 +1,24 @@
+<div class="alertas-panel" *ngIf="productosBajos.length > 0; else allGood">
+  <div class="panel-header">
+    <h3><i class="fa-solid fa-bell"></i> Alertas de Reabastecimiento</h3>
+  </div>
+
+  <div class="alerta-list">
+    <div class="alerta-item" *ngFor="let item of productosBajos">
+      <div class="prod-info">
+        <span class="prod-name">{{ item.nombre }}</span>
+        <span class="prod-sku">{{ item.sku }}</span>
+      </div>
+      <div class="prod-stock">
+        Quedan: <strong>{{ item.stock }}</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #allGood>
+  <div class="all-good-panel">
+    <i class="fa-solid fa-check-circle"></i>
+    <p>Todo en orden. Niveles de stock saludables.</p>
+  </div>
+</ng-template>

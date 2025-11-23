@@ -1,13 +1,32 @@
 <header class="navbar">
-  <h1>Invitación</h1>
+  <h1>Sistema de Inventario</h1>
   <nav>
-    <a routerLink="/" routerLinkActive="activo">Inicio</a>
-    <a routerLink="/asistencia">Confirmar Asistencia</a>
-    <a routerLink="/listadoConfirmaciones">Listado de Confirmaciones</a>
+    <!-- 1. Inicio -->
+    <a routerLink="/" routerLinkActive="activo" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+
+    <!-- 2. Sección de Alertas (NUEVO) -->
+    <a routerLink="/alertas" routerLinkActive="activo" style="color: #ffcdd2;">
+      <i class="fa-solid fa-bell"></i> Alertas
+    </a>
+
+    <!-- 3. Listados -->
+    <a routerLink="/productos" routerLinkActive="activo">Lista Productos</a>
+    <a routerLink="/movimientos" routerLinkActive="activo">Historial Movimientos</a>
+
+    <!-- 4. Formularios y Acciones -->
+    <a routerLink="/productos/nuevo" routerLinkActive="activo">Nuevo Producto</a>
+    <a routerLink="/movimientos/nuevo" routerLinkActive="activo">Registrar Movimiento</a>
+
+    <!-- 5. Vistas de Detalle/Edición (Acceso directo) -->
+    <a routerLink="/productos/editar" routerLinkActive="activo">Editar Producto</a>
+    <a routerLink="/detalle-producto" routerLinkActive="activo">Detalle Producto</a>
   </nav>
 </header>
 
 <main class="contenido">
-  <router-outlet>
-  </router-outlet>
+  <router-outlet></router-outlet>
 </main>
+
+<footer class="footer">
+  <p>&copy; 2025 Sistema de Inventario - Proyecto Final</p>
+</footer>
