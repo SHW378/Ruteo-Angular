@@ -1,0 +1,87 @@
+.form-wrapper {
+  max-width: 500px;
+  margin: 40px auto; /* Centrado horizontal */
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.form-header {
+  text-align: center; /* CENTRADO DEL TEXTO */
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f0f2f5;
+  padding-bottom: 20px;
+}
+
+.form-header h2 {
+  color: #0d47a1;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Inputs */
+.input-group { margin-bottom: 25px; }
+label { display: block; margin-bottom: 8px; color: #546e7a; font-weight: 600; font-size: 0.9rem; }
+
+input, select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #cfd8dc;
+  border-radius: 10px; /* Bordes más suaves */
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  background-color: white;
+  border-color: #0d47a1;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(13, 71, 161, 0.1);
+}
+
+/* Radio Buttons estilizados */
+.radio-options {
+  display: flex;
+  justify-content: center; /* Centrar opciones */
+  gap: 30px;
+  padding: 10px;
+  background: #f5f7fa;
+  border-radius: 10px;
+}
+
+.radio-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Botón Guardar (Estilo Pill Centrado) */
+.form-actions {
+  text-align: center; /* Centrar el botón */
+  margin-top: 40px;
+}
+
+.btn-primario {
+  background-color: #0d47a1;
+  color: white;
+  border: none;
+  padding: 14px 50px; /* Más ancho */
+  border-radius: 50px; /* FORMA DE PÍLDORA (PILL) */
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(13, 71, 161, 0.3); /* Sombra azulada */
+}
+
+.btn-primario:hover {
+  background-color: #1565c0;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(13, 71, 161, 0.4);
+}

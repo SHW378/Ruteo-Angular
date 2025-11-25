@@ -1,0 +1,25 @@
+<div class="alertas-container">
+  <!-- Mostrar título solo si es página independiente (no viene input del padre) -->
+  <h2 class="page-title" *ngIf="!productosBajos">Centro de Alertas</h2>
+
+  <div *ngIf="cargando" class="loading">Cargando alertas...</div>
+
+  <div class="alertas-grid" *ngIf="!cargando && listaAlertas().length > 0">
+    <div class="alerta-card" *ngFor="let item of listaAlertas()">
+      <div class="icon-warning"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <div class="info">
+        <h3>{{ item.nombre }}</h3>
+        <p class="sku">{{ item.sku }}</p>
+        <span class="stock-badge">Stock: {{ item.stock }}</span>
+      </div>
+      <button class="btn-ver" (click)="irAlDetalle(item)">
+        Ver Detalle <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="empty-state" *ngIf="!cargando && listaAlertas().length === 0">
+    <i class="fa-solid fa-check-circle"></i>
+    <p>Todo en orden. No hay alertas de stock.</p>
+  </div>
+</div>

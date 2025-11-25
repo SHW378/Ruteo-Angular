@@ -1,0 +1,53 @@
+<!-- NAVBAR BOOTSTRAP 5 -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/">
+      <i class="fa-solid fa-box-open me-2"></i> Inventario
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/alertas" routerLinkActive="active">
+            <i class="fa-solid fa-bell me-1"></i> Alertas
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            Gestión
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/productos">Lista de Productos</a></li>
+            <li><a class="dropdown-item" routerLink="/movimientos">Historial Movimientos</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLink="/productos/nuevo">Nuevo Producto</a></li>
+          </ul>
+        </li>
+        <li class="nav-item ms-lg-2">
+          <a class="btn btn-light text-primary fw-bold btn-sm mt-1 mt-lg-0" routerLink="/movimientos/nuevo">
+            <i class="fa-solid fa-plus"></i> Registrar
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light py-4 mt-auto">
+  <div class="container text-center">
+    <p class="mb-1">&copy; 2025 Sistema de Inventario</p>
+    <small class="text-muted">Proyecto Final - Aplicaciones Web</small>
+  </div>
+</footer>

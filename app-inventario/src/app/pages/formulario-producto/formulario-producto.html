@@ -1,0 +1,44 @@
+<div class="form-wrapper">
+  <div class="form-header">
+    <h2>{{ esEdicion ? 'Editar Producto' : 'Registrar Nuevo Producto' }}</h2>
+  </div>
+
+  <form class="futuristic-form" (submit)="guardar($event)">
+    <div class="input-group">
+      <label>Código SKU</label>
+      <input type="text" [value]="form.sku" (input)="updateField($event, 'sku')" required placeholder="Ej. TEC-001">
+    </div>
+
+    <div class="input-group">
+      <label>Nombre</label>
+      <input type="text" [value]="form.nombre" (input)="updateField($event, 'nombre')" required>
+    </div>
+
+    <div class="row-group">
+      <div class="input-group">
+        <label>Categoría</label>
+        <!-- El select ahora usa la lista dinámica de la base de datos -->
+        <select [value]="form.categoria_id" (change)="updateField($event, 'categoria_id')" required>
+          <option value="">Seleccionar...</option>
+          <option *ngFor="let cat of listaCategorias()" [value]="cat.id">
+            {{ cat.nombre }}
+          </option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Precio</label>
+        <input type="number" [value]="form.precio" (input)="updateField($event, 'precio')" step="0.01" required>
+      </div>
+    </div>
+
+    <div class="input-group" *ngIf="!esEdicion">
+      <label>Stock Inicial</label>
+      <input type="number" [value]="form.stock" (input)="updateField($event, 'stock')" required>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn-secundario" (click)="cancelar()">Cancelar</button>
+      <button type="submit" class="btn-primario">Guardar Datos</button>
+    </div>
+  </form>
+</div>

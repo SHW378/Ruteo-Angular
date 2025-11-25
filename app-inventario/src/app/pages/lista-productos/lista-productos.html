@@ -1,0 +1,57 @@
+<div class="listado-container">
+  <div class="actions-bar">
+    <h2>Inventario</h2>
+    <button class="btn-add" (click)="nuevoProducto()">
+      <i class="fa-solid fa-plus"></i> Nuevo Producto
+    </button>
+  </div>
+
+  <div class="tabla-wrapper">
+    <table class="modern-table">
+      <!-- ENCABEZADO AZUL -->
+      <thead>
+        <tr>
+          <th class="th-sku">SKU</th>
+          <th>Producto</th>
+          <th class="th-stock">Stock</th>
+          <th class="th-precio">Precio</th>
+          <th class="th-acciones">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of productos()">
+          <td><span class="sku-tag">{{ p.sku }}</span></td>
+          <td>
+            <div class="prod-name">{{ p.nombre }}</div>
+          </td>
+
+          <!-- Stock con Badge -->
+          <td>
+            <span class="stock-badge" [ngClass]="{'low': p.stock < 5, 'ok': p.stock >= 5}">
+              {{ p.stock }}
+            </span>
+          </td>
+
+          <td class="precio">${{ p.precio }}</td>
+
+          <!-- Botones con Texto -->
+          <td class="acciones">
+            <button (click)="verDetalle(p)" class="btn-action btn-ver">
+              <i class="fa-solid fa-eye"></i> Ver Detalle
+            </button>
+            <button (click)="editar(p)" class="btn-action btn-editar">
+              <i class="fa-solid fa-pen"></i> Editar
+            </button>
+          </td>
+        </tr>
+
+        <tr *ngIf="productos().length === 0">
+          <td colspan="5" class="no-data">
+            <i class="fa-solid fa-box-open mb-2" style="font-size: 2rem; display:block; opacity: 0.5"></i>
+            No hay productos registrados.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

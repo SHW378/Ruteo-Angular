@@ -1,0 +1,74 @@
+/* Reutilizando y adaptando los estilos de tabla */
+.historial-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-header { margin-bottom: 20px; text-align: left; }
+.page-header h2 { color: #0d47a1; margin: 0; font-size: 1.8rem; }
+.subtitle { color: #666; margin-top: 5px; font-size: 0.9rem; }
+
+.tabla-wrapper {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #343a40; /* Gris oscuro para diferenciar del listado de productos, o usa #0d47a1 para consistencia */
+  color: white;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+th { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; }
+td { font-size: 0.9rem; color: #495057; }
+
+/* Filas alternas (Striped) */
+tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.02);
+}
+
+tbody tr:hover {
+  background-color: rgba(0,0,0,.05);
+}
+
+/* Badges (Etiquetas de color) */
+.badge {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-entrada {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}
+
+.badge-salida {
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+}
+
+.text-right { text-align: right; padding-right: 30px; font-family: monospace; font-size: 1rem; }
+.fw-bold { font-weight: 700; }
+.text-success { color: #28a745; margin-right: 5px; }
+
+.no-data { text-align: center; padding: 20px; color: #999; font-style: italic; }

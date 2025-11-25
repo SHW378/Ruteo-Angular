@@ -1,0 +1,41 @@
+<div class="form-wrapper">
+  <div class="form-header">
+    <h2>Registrar Entrada/Salida</h2>
+  </div>
+
+  <form class="futuristic-form" (submit)="registrar($event)">
+
+    <div class="input-group">
+      <label>Producto</label>
+      <select (change)="updateField($event, 'producto_id')" required>
+        <option value="">-- Seleccione Producto --</option>
+        <option *ngFor="let p of listaProductos()" [value]="p.id">
+          {{ p.nombre }} (Stock actual: {{ p.stock }})
+        </option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Tipo de Operación</label>
+      <div class="radio-options">
+        <label class="radio-btn">
+          <input type="radio" name="tipo" value="Entrada" checked (change)="updateField($event, 'tipo')">
+          <span>Entrada (Compra)</span>
+        </label>
+        <label class="radio-btn">
+          <input type="radio" name="tipo" value="Salida" (change)="updateField($event, 'tipo')">
+          <span>Salida (Venta)</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>Cantidad</label>
+      <input type="number" min="1" [value]="movimiento.cantidad" (input)="updateField($event, 'cantidad')" required>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn-primario full-width">Confirmar Movimiento</button>
+    </div>
+  </form>
+</div>
